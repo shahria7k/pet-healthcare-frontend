@@ -21,7 +21,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"deploy": "react-scripts build && firebase deploy",
-		"autogit": "git add . && git commit --m 'automated commit' && git push"
+		"autogit": "node -e \"const mssg = 'BUILD - ' + process.argv[1]; require('child_process').execSync('git add . && git commit -m \\\"' + mssg + '\\\"', { stdio:[0, 1, 2] })\""
 	},
 	"eslintConfig": {
 		"extends": [
