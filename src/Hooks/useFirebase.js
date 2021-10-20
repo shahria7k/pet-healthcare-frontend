@@ -1,19 +1,19 @@
 
+import { initializeApp } from "firebase/app";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut as logOut } from "firebase/auth";
 import { useEffect, useState } from 'react';
-import initFirebase from '../Configs/Firebase/firebase.config';
+import firebaseConfig from '../Config/Firebase/firebase.config';
 const useFirebase = () => {
-    initFirebase();
+    initializeApp(firebaseConfig);
+    const [isLoading, setIsLoading] = useState(true);
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     const auth = getAuth();
     const signUpUsingPassword = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
-
     };
     const signInUsingPassword = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
-
     };
     const signInUsingGoogle = () => {
         const provider = new GoogleAuthProvider();
@@ -33,6 +33,7 @@ const useFirebase = () => {
             });
     };
     useEffect(() => {
+        setIsLoading(true);
         const unmount = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
@@ -40,11 +41,14 @@ const useFirebase = () => {
             } else {
                 setUser(null);
             }
+            setIsLoading(false);
         });
         return unmount;
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const authContext = {
+        setIsLoading,
+        isLoading,
         error,
         setError,
         user,

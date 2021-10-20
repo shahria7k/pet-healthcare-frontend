@@ -1,0 +1,90 @@
+body {
+	font-family: "Open Sans", sans-serif;
+	background-image: linear-gradient(180deg, #1b2963, #152154);
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+h1,
+h2,
+h3 h4,
+h5,
+h6,
+a,
+.btn {
+	font-family: Syne, sans-serif;
+}
+
+.gradient-bg {
+	background-image: linear-gradient(180deg, #1b2963, #152154);
+}
+a.nav-link {
+	-webkit-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+	font-family: Syne, sans-serif;
+	color: #bfc5e6;
+	font-size: 16px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 26px;
+	color: #bfc5e6 !important;
+}
+a.nav-link:hover {
+	color: #fff !important;
+}
+.color-shift {
+	color: #7d90e0;
+}
+.main-text {
+	font-family: Syne, sans-serif;
+	line-height: 70px;
+	font-weight: 700;
+	font-size: 65px;
+	color: #fff;
+}
+.sub-text {
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 26px;
+	/* or 162% */
+
+	color: #bfc5e6;
+}
+.btn {
+	width: 240px;
+	height: 54px;
+	transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out,
+		-webkit-transform 0.2s ease-in-out;
+	background: #6e57ff;
+	border-radius: 50px;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 26px;
+	/* identical to box height, or 162% */
+	padding-top: 12px;
+	color: #ffffff;
+}
+.sup-text {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 26px;
+	/* identical to box height, or 173% */
+	position: relative;
+	color: #1ba0ab;
+	transform: translateX(40px);
+}
+.sup-text::before {
+	position: absolute;
+	content: "";
+	width: 40px;
+	left: -45px;
+	top: 12px;
+	height: 2px;
+	background: #1ba0ab;
+	border-radius: 0px;
+}

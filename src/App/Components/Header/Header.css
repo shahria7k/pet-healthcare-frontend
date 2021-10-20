@@ -1,0 +1,20 @@
+.nav-container {
+	border-bottom: 1px solid rgba(223, 235, 241, 0.1);
+}
+.navbar-light .navbar-nav .nav-link {
+	transition: color 0.2s ease-in-out;
+	font-family: Syne, sans-serif;
+	color: #bfc5e6;
+	font-size: 16px;
+	font-weight: 400;
+}
+.navbar-light .navbar-nav .nav-link {
+	color: #bfc5e6 !important;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+	color: #fff !important;
+}
+.dropdown-menu {
+	background-color: transparent;
+	color: #bfc5e6;
+}
