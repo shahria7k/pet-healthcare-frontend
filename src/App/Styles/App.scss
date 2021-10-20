@@ -4,6 +4,10 @@ body {
 	background-repeat: no-repeat;
 	min-height: 100vh;
 }
+a {
+	text-decoration: none;
+	color: black;
+}
 h1,
 h2,
 h3 h4,
@@ -31,6 +35,7 @@ a.nav-link {
 a.nav-link:hover {
 	color: #fff !important;
 }
+
 .color-shift {
 	color: #7d90e0;
 }
@@ -85,6 +90,27 @@ a.nav-link:hover {
 	left: -45px;
 	top: 12px;
 	height: 2px;
+	background: #1ba0ab;
+	border-radius: 0px;
+}
+.sub-text {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 26px;
+	/* identical to box height, or 173% */
+	position: relative;
+	color: #1ba0ab;
+	// transform: translateX(40px);
+}
+.sub-text::before {
+	position: absolute;
+	content: "";
+	width: 2px;
+	left: -12px;
+	top: 3px;
+	height: 48px;
 	background: #1ba0ab;
 	border-radius: 0px;
 }

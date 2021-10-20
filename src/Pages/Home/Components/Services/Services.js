@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../../Hooks/useAuth';
 import './Services.css';
 const Services = () => {
-    const { isLoading, setIsLoading } = useAuth();
+    const { isLoading } = useAuth();
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch('./services.json').then(res => res.json()).then(data => setServices(data));

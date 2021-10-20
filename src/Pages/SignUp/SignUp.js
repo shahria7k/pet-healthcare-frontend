@@ -1,30 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
-import signUpImg from '../../Images/signup.gif';
-
+import signInImg from '../../Images/signin.gif';
 
 
 
 // const nextRoute= useParams()
 const SignUp = () => {
     const history = useHistory();
+    const location = useLocation();
+    console.log(location);
     const [newUser, setNewUser] = useState({});
-    const { signInUsingGoogle, signUpUsingPassword, user } = useAuth();
-    if (user) {
-        return (
-            <Redirect>
-
-            </Redirect>
-        );
-    }
+    const { signInUsingGoogle, signInUsingPassword: signUpUsingPassword } = useAuth();
+    // console.log(history);
     return (
         <div className="container">
             <div className="row">
                 <div className="col-lg-6">
-                    <img src={signUpImg} alt="" className="img-fluid" />
+                    <img src={signInImg} alt="" className="img-fluid" />
                 </div>
                 <div className="col-lg-6 p-lg-5 p-md-3 p-2">
                     <Form className="mt-lg-5 pt-lg-5" onSubmit={(e) => { e.preventDefault(); signUpUsingPassword(newUser.email, newUser.password); }}>
@@ -51,8 +46,8 @@ const SignUp = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Remember me" />
                         </Form.Group>
-                        <button className="btn btn-primary" type="submit">Register</button>
-                        <button className="btn btn-primary ms-4" onClick={(e) => { e.preventDefault(); signInUsingGoogle(); }}>Login with Google</button>
+                        <button className="btn btn-primary" type="submit">Sign Up</button>
+                        <button className="btn btn-primary ms-4" onClick={(e) => { e.preventDefault(); signInUsingGoogle().then(() => { history.push(location.state.from.pathname); }); }}>Sign Up using Google</button>
                     </Form>
                 </div>
             </div>
