@@ -15,11 +15,13 @@ const useFirebase = () => {
     const signInUsingPassword = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
     };
+    //const auth = something
     const signInUsingGoogle = () => {
         const provider = new GoogleAuthProvider();
         return signInWithPopup(auth, provider);
 
     };
+    // const func= signInUsingGoogle;
     const signOut = () => {
         logOut(auth)
             .then(() => {
@@ -33,7 +35,7 @@ const useFirebase = () => {
             });
     };
     useEffect(() => {
-        setIsLoading(true);
+        // setIsLoading(true);
         const unmount = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
@@ -46,6 +48,7 @@ const useFirebase = () => {
         return unmount;
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+    const dbContext= {}
     const authContext = {
         setIsLoading,
         isLoading,
@@ -58,7 +61,8 @@ const useFirebase = () => {
         signOut
     };
     return {
-        authContext
+        authContext,
+        dbContext
     };
 };
 export default useFirebase;
