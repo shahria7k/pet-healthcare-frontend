@@ -11,7 +11,7 @@ import Header from './Components/Header/Header';
 import PrivetRoute from './Components/PrivetRoute/PrivetRoute';
 import './Styles/App.css';
 function App() {
-  // some
+  // some change
   return (
     <AuthProvider>
       <Router>
